@@ -34,9 +34,12 @@
         sprite.yScale = 0.5;
         sprite.position = location;
         
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
+        //SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
+        SKAction *action1 = [SKAction rotateByAngle:M_PI duration:1];
+            SKAction *action2 = [SKAction scaleXTo:1 y: 1  duration:1];
+        SKAction *plusAction = [SKAction group:@[action1,action2]];
         
-        [sprite runAction:[SKAction repeatActionForever:action]];
+        [sprite runAction:[SKAction repeatActionForever:plusAction]];
         
         [self addChild:sprite];
     }
